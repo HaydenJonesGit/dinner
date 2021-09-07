@@ -7,9 +7,10 @@
 }
 
 .header h1 {
-    color: red;
+    color: #db0007;
     font-size: 80px;
     font-family: 'Italianno', cursive;
+    text-decoration: underline #ffbb0e;
 }
 
 /* Squares grid styles*/
@@ -21,7 +22,7 @@
   .squares-wrapper .squares {
     width: 1000px;
     padding: 80px;
-    border: solid red 5px;
+    border: solid #ffbb0e 5px;
     border-style: double;
   }
   
@@ -45,7 +46,13 @@
   }
   
   .square h1 {
-    color: #5e253c;
+    color: #db0007;
+    font-weight: bolder;
+    font-size: 30px;
+  }
+
+  .square p {
+    font-size: 15px;
   }
   
   /* helpers classes */
