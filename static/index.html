@@ -25,7 +25,7 @@
     <div class="squares">
       <div class="square">
         <div class="img-wrapper">
-          <img src="images/gen-z.jpg" alt="Dice Bag">
+          <img src="images/gen-z.jpg" alt="Gen Z Burger">
         </div>
         <div class="square-text-wrapper">
           <h1>Gen Z Burger</h1>
@@ -34,7 +34,7 @@
             Tide&copy;</p>
 
           <div class="centered-btn-wrapper">
-            <button id="genZEntree" class="button">Add to Order</button>
+            <button id="genZEntreeBtn" class="button">Add to Order</button>
           </div>
 
         </div>
@@ -46,20 +46,20 @@
 
           <p>I'd tell you what's on this sandwhich, but I'd have to find last week's grocery list. Do you have health
             insurance?</p>
-          
+
           <div class="centered-btn-wrapper">
-            <button id="cloggerEntree" class="button">Add to Order</button>
+            <button id="cloggerEntreeBtn" class="button">Add to Order</button>
           </div>
 
         </div>
         <div class="img-wrapper">
-          <img src="images/the-clogger.jpeg" alt="Dragon and Dice">
+          <img src="images/the-clogger.jpeg" alt="Chicken sandwhich">
         </div>
       </div>
 
       <div class="square">
         <div class="img-wrapper">
-          <img src="images/maybe-vegan-lasagna.jpg" alt="Dragon and Dice">
+          <img src="images/maybe-vegan-lasagna.jpg" alt="Vegetarian Lasagna">
         </div>
 
         <div class="square-text-wrapper">
@@ -69,7 +69,7 @@
             They said it's vegan or maybe Vegetarian, I don't know the difference, but that's not why it's green...</p>
 
           <div class="centered-btn-wrapper">
-            <button id="veganEntree" class="button">Add to Order</button>
+            <button id="veganEntreeBtn" class="button">Add to Order</button>
           </div>
 
         </div>
@@ -82,15 +82,73 @@
           <p>A healthy kid friendly entree, picked form the mysterious purplish pond behind our dumpster!(someone on
             tiktok said you could eat them, so it should be ok.)</p>
           <div class="centered-btn-wrapper">
-            <button id="cornDogEntree" class="button">Add to Order</button>
+            <button id="cornDogEntreeBtn" class="button">Add to Order</button>
           </div>
 
         </div>
         <div class="img-wrapper">
-          <img src="images/freshly-harvested-corndog.jpg" alt="Dice Bag">
+          <img src="images/freshly-harvested-corndog.jpg" alt="Harvested Corn Dogs">
         </div>
       </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content1">
+        <span class="close">&times;</span>
+
+        <div class="waiter-commentary">
+          <p><strong>Your waiter Meickyanlieghe says: </strong>
+            "Would you like Ivermectin with that?"</p>
+        </div>
+        <br>
+
+        <div class="img-wrapper">
+          <img src="images/gen-z.jpg" alt="Gen Z Burger">
+        </div>
+        <br>
+        
+        <p>Would you like to add ____ and continue with your order?</p>
+
+        <div class="centered-btn-wrapper">
+          <button id="cornDogEntreeBtn" class="button">Yes</button>
+          <button id="cornDogEntreeBtn" class="button">No</button>
+        </div>
+
+      </div>
+
     </div>
 </body>
 
 </html>
+
+<script>
+  /* // Get the modal */
+  var modal = document.getElementById("myModal");
+
+  /* // Get the button that opens the modal */
+  var btn = document.getElementById("genZEntreeBtn");
+
+  /* // Get the <span> element that closes the modal */
+  var span = document.getElementsByClassName("close")[0];
+
+
+  /* // When the user clicks on the button, open the modal */
+  btn.onclick = function () {
+    modal.style.display = "block";
+  }
+
+  /* // When the user clicks on <span> (x), close the modal */
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  /* // When the user clicks anywhere outside of the modal, close it */
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
