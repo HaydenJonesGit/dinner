@@ -93,11 +93,11 @@
     </div>
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="myEntreeModal" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content1">
-        <span class="close">&times;</span>
+        <span class="close1">&times;</span>
 
         <div class="waiter-commentary">
           <p><strong>Your waiter Meickyanlieghe says: </strong>
@@ -110,11 +110,11 @@
         </div>
         <br>
         
-        <p>Would you like to add ____ and continue with your order?</p>
+        <p>Would you like to add ____ for $__.__ and continue with your order?</p>
 
         <div class="centered-btn-wrapper">
-          <button id="cornDogEntreeBtn" class="button">Yes</button>
-          <button id="cornDogEntreeBtn" class="button">No</button>
+          <button id="confirmEntree" class="button">Yes</button>
+          <button id="redactEntree" class="button">No</button>
         </div>
 
       </div>
@@ -126,29 +126,30 @@
 
 <script>
   /* // Get the modal */
-  var modal = document.getElementById("myModal");
+  var entreeModal = document.getElementById("myEntreeModal");
+
 
   /* // Get the button that opens the modal */
   var btn = document.getElementById("genZEntreeBtn");
 
   /* // Get the <span> element that closes the modal */
-  var span = document.getElementsByClassName("close")[0];
+  var span = document.getElementsByClassName("close1")[0];
 
 
   /* // When the user clicks on the button, open the modal */
   btn.onclick = function () {
-    modal.style.display = "block";
+    entreeModal.style.display = "block";
   }
 
   /* // When the user clicks on <span> (x), close the modal */
   span.onclick = function () {
-    modal.style.display = "none";
+    entreeModal.style.display = "none";
   }
 
   /* // When the user clicks anywhere outside of the modal, close it */
   window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == entreeModal) {
+      entreeModal.style.display = "none";
     }
   }
 </script>
