@@ -97,7 +97,7 @@
 
       <!-- Modal content -->
       <div class="modal-content1">
-        <span class="close1">&times;</span>
+        <span class="close1" id="closeBtn1">&times;</span>
 
         <div class="waiter-commentary">
           <p><strong>Your waiter Meickyanlieghe says: </strong>
@@ -109,6 +109,32 @@
           <img src="images/gen-z.jpg" alt="Gen Z Burger">
         </div>
         <br>
+        
+        <p>Would you like to add ____ for $__.__ and continue with your order?</p>
+
+        <div class="centered-btn-wrapper">
+          <button id="confirmEntree" class="button">Yes</button>
+          <button id="closeBtn1" class="button">No</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="mySidesModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content1">
+        <span class="close1" id="closeBtn2">&times;</span>
+
+        <div class="waiter-commentary">
+          <p><strong>Your waiter Meickyanlieghe says: </strong>
+            "Would you like Ivermectin with that?"</p>
+        </div>
+        <br>
+
+        
         
         <p>Would you like to add ____ for $__.__ and continue with your order?</p>
 
@@ -127,13 +153,15 @@
 <script>
   /* // Get the modal */
   var entreeModal = document.getElementById("myEntreeModal");
-
+  var sidesModal = document.getElementById("mySidesModal");
 
   /* // Get the button that opens the modal */
   var btn = document.getElementById("genZEntreeBtn");
+  var sidesBtn = document.getElementById("confirmEntree");
 
   /* // Get the <span> element that closes the modal */
-  var span = document.getElementsByClassName("close1")[0];
+  var span = document.getElementById("closeBtn1");
+  var span2 = document.getElementById("closeBtn2");
 
 
   /* // When the user clicks on the button, open the modal */
@@ -141,15 +169,25 @@
     entreeModal.style.display = "block";
   }
 
+  sidesBtn.onclick = function () {
+    sidesModal.style.display = "block";
+    entreeModal.style.display = "none";
+  }
+
   /* // When the user clicks on <span> (x), close the modal */
   span.onclick = function () {
     entreeModal.style.display = "none";
   }
 
+  span2.onclick = function () {
+    sidesModal.style.display = "none";
+  }
+
   /* // When the user clicks anywhere outside of the modal, close it */
   window.onclick = function (event) {
-    if (event.target == entreeModal) {
+    if (event.target == entreeModal || event.target == sidesModal) {
       entreeModal.style.display = "none";
+      sidesModal.style.display = "none";
     }
   }
 </script>
