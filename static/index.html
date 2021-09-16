@@ -92,16 +92,16 @@
       </div>
     </div>
 
-    <!-- The Modal -->
+    <!-- Entree Modal -->
     <div id="myEntreeModal" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content1">
-        <span class="close1" id="closeBtn1">&times;</span>
+        <span class="close1" onclick="closeModals()">&times;</span>
 
         <div class="waiter-commentary">
-          <p><strong>Your waiter Meickyanlieghe says: </strong>
-            "Would you like Ivermectin with that?"</p>
+          <p><strong>Your waiter Meickyanlieghe says: </strong></p>
+            <p id="waiterComment">"Would you like fries with that?"</p>
         </div>
         <br>
 
@@ -114,19 +114,20 @@
 
         <div class="centered-btn-wrapper">
           <button id="confirmEntree" class="button">Yes</button>
-          <button id="closeBtn1" class="button">No</button>
+          <button onclick="closeModals()" class="button">No</button>
         </div>
 
       </div>
 
     </div>
 
-    <!-- The Modal -->
+
+    <!-- SIdes Modal -->
     <div id="mySidesModal" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content1">
-        <span class="close1" id="closeBtn2">&times;</span>
+        <span class="close1" onclick="closeModals()">&times;</span>
 
         <div class="waiter-commentary">
           <p><strong>Your waiter Meickyanlieghe says: </strong>
@@ -143,6 +144,9 @@
           <button id="redactEntree" class="button">No</button>
         </div>
 
+        <button onclick="closeModals()">Click me</button>
+
+
       </div>
 
     </div>
@@ -151,21 +155,19 @@
 </html>
 
 <script>
-  /* // Get the modal */
+  /* // Modals */
   var entreeModal = document.getElementById("myEntreeModal");
   var sidesModal = document.getElementById("mySidesModal");
 
-  /* // Get the button that opens the modal */
+  /* // Open Modal Buttons */
   var btn = document.getElementById("genZEntreeBtn");
   var sidesBtn = document.getElementById("confirmEntree");
 
-  /* // Get the <span> element that closes the modal */
-  var span = document.getElementById("closeBtn1");
-  var span2 = document.getElementById("closeBtn2");
 
 
-  /* // When the user clicks on the button, open the modal */
+  /* Open Modals */
   btn.onclick = function () {
+    // document.getElementById("waiterComment").innerHTML = "Hello World";
     entreeModal.style.display = "block";
   }
 
@@ -174,14 +176,12 @@
     entreeModal.style.display = "none";
   }
 
-  /* // When the user clicks on <span> (x), close the modal */
-  span.onclick = function () {
+
+  function closeModals() {
+    sidesModal.style.display = "none";
     entreeModal.style.display = "none";
   }
 
-  span2.onclick = function () {
-    sidesModal.style.display = "none";
-  }
 
   /* // When the user clicks anywhere outside of the modal, close it */
   window.onclick = function (event) {
