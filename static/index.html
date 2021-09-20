@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- styles -->
   <link rel="stylesheet" href="styles/index.css">
   <!-- fonts -->
@@ -34,7 +35,7 @@
             Tide&copy;</p>
 
           <div class="centered-btn-wrapper">
-            <button id="genZEntreeBtn" class="button">Add to Order</button>
+            <button id="genZEntreeBtn" onclick="openEntreeModal('Would you like Ivermectin with that?', 'the Gen Z Burger', '$1.99', 'images/gen-z.jpg' )" class="button">Add to Order</button>
           </div>
 
         </div>
@@ -44,11 +45,10 @@
         <div class="square-text-wrapper">
           <h1>"The Clogger" Chicken sandwhich</h1>
 
-          <p>I'd tell you what's on this sandwhich, but I'd have to find last week's grocery list. Do you have health
-            insurance?</p>
+          <p>An enourmous "everything on it" chicken sandwhich. I'd tell you what's on this sandwhich, but I'd have to find last week's grocery list.</p>
 
           <div class="centered-btn-wrapper">
-            <button id="cloggerEntreeBtn" class="button">Add to Order</button>
+            <button id="cloggerEntreeBtn" onclick="openEntreeModal('Do you have health insurance?', 'the Clogger sandwhich', '$45.99', 'images/the-clogger.jpeg' )" class="button">Add to Order</button>
           </div>
 
         </div>
@@ -66,10 +66,10 @@
           <h1>Vegan or Vegetarian Lasagna</h1>
 
           <p>Our green option for our customers that are watching their weight and the enviroment!
-            They said it's vegan or maybe Vegetarian, I don't know the difference, but that's not why it's green...</p>
+            They said it's vegan or maybe Vegetarian, I don't know the difference.</p>
 
           <div class="centered-btn-wrapper">
-            <button id="veganEntreeBtn" class="button">Add to Order</button>
+            <button id="veganEntreeBtn" onclick="openEntreeModal('It\'s not gren because of the vegetables...', 'the Vegetarian Lasagna', '$451.99', 'images/maybe-vegan-lasagna.jpg' )" class="button">Add to Order</button>
           </div>
 
         </div>
@@ -82,7 +82,7 @@
           <p>A healthy kid friendly entree, picked form the mysterious purplish pond behind our dumpster!(someone on
             tiktok said you could eat them, so it should be ok.)</p>
           <div class="centered-btn-wrapper">
-            <button id="cornDogEntreeBtn" class="button">Add to Order</button>
+            <button id="cornDogEntreeBtn" onclick="openEntreeModal('We don\'t know how to actually prepare these, so we just didn\'t', 'Harvested Corn Dogs', '$0.99', 'images/freshly-harvested-corndog.jpg' )" class="button">Add to Order</button>
           </div>
 
         </div>
@@ -100,17 +100,15 @@
         <span class="close1" onclick="closeModals()">&times;</span>
 
         <div class="waiter-commentary">
-          <p><strong>Your waiter Meickyanlieghe says: </strong></p>
-            <p id="waiterComment">"Would you like fries with that?"</p>
+          <p><strong>Your waiter Meickyanlieghe says: </strong><br>
+          "<span id="waiterComment">Would you like everytrhing on that?</span>"</p>
         </div>
         <br>
 
-        <div class="img-wrapper">
-          <img src="images/gen-z.jpg" alt="Gen Z Burger">
-        </div>
+        <div class="img-wrapper"></div>
         <br>
-        
-        <p>Would you like to add ____ for $__.__ and continue with your order?</p>
+
+        <p>Would you like to add <span id="entreeName">this entree</span> for <span id="entreePrice">$100.00</span> and continue with your order?</p>
 
         <div class="centered-btn-wrapper">
           <button id="confirmEntree" class="button">Yes</button>
@@ -128,11 +126,7 @@
       <!-- Modal content -->
       <div class="modal-content1">
         <span class="close1" onclick="closeModals()">&times;</span>
-
-        <div class="waiter-commentary">
-          <p><strong>Your waiter Meickyanlieghe says: </strong>
-            "Would you like Ivermectin with that?"</p>
-        </div>
+          <h1>Sides Menu</h1>
         <br>
 
         
@@ -159,17 +153,33 @@
   var entreeModal = document.getElementById("myEntreeModal");
   var sidesModal = document.getElementById("mySidesModal");
 
-  /* // Open Modal Buttons */
-  var btn = document.getElementById("genZEntreeBtn");
+  // /* // Open Modal Buttons */
+  // var btn = document.getElementById("genZEntreeBtn");
   var sidesBtn = document.getElementById("confirmEntree");
 
 
 
-  /* Open Modals */
-  btn.onclick = function () {
-    // document.getElementById("waiterComment").innerHTML = "Hello World";
+
+  // /* Open Modals */
+  // btn.onclick = function () {
+  //   // document.getElementById("waiterComment").innerHTML = "Hello World";
+  //   entreeModal.style.display = "block";
+  // }
+
+
+  function openEntreeModal(description, entree, price, img) {
+    $("#myEntreeModal .img-wrapper").empty()
+    if (!!img) {
+      $("#myEntreeModal .img-wrapper").append($("<img/>").attr("src",img))
+    }
+    document.getElementById("waiterComment").innerHTML = description;
+    document.getElementById("entreeName").innerHTML = entree;
+    document.getElementById("entreePrice").innerHTML = price;
     entreeModal.style.display = "block";
   }
+
+
+
 
   sidesBtn.onclick = function () {
     sidesModal.style.display = "block";

@@ -47,6 +47,7 @@
   align-items: center;
   flex-direction: column;
   padding: 42px;
+  text-align: center;
 }
 
 .square h1 {
