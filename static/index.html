@@ -152,13 +152,15 @@
             <div class="side-description">
               A questionable bioled eggs and peas combination in jello.
             </div>
-            <!-- Eat your vegetables, proteins, and, desert in one bite.  -->
+
             <div class="side-price">
               $100.00
             </div>
 
             <div class="centered-btn-wrapper">
-              <button id="confirm-side" class="button">Select and Continue</button>
+              <button id="confirm-side"
+               onclick="openFinalSideModal('Eat your vegetables, proteins, and, desert in one bite!', 'Egg Salad Surpise', '$100.00', 'images/jello-egg-sandwich.jpg' )" 
+               class="button">Select</button>
             </div>
           </div>
         </div><br>
@@ -175,13 +177,15 @@
             <div class="side-description">
               A delectable concoction of leftover meat from the entrees.
             </div>
-            <!-- Eat your vegetables, proteins, and, desert in one bite.  -->
+
             <div class="side-price">
               $3.49
             </div>
 
             <div class="centered-btn-wrapper">
-              <button id="confirm-side" class="button">Select and Continue</button>
+              <button id="confirm-side"
+               onclick="openFinalSideModal('It goes well with any entre! Mostly because it contains a little of each entree!', 'Mystery Meatloaf Jello Salad', '$3.49', 'images/mystery-meatloaf-jello-salad.jpg' )" 
+               class="button">Select</button>
             </div>
           </div>
         </div><br>
@@ -205,14 +209,40 @@
             </div>
 
             <div class="centered-btn-wrapper">
-              <button id="confirm-side" class="button">Select and Continue</button>
+              <button id="confirm-side"
+               onclick="openFinalSideModal('Comes with a vat of cocktail sauce!', 'Shrimp Jello', '$2.00', 'images/shrimp-jello-salad.jpg' )" 
+               class="button">Select</button>
             </div>
           </div>
         </div>
         <br>
-
       </div>
+    </div>
 
+    <!-- Final Side Modal -->
+    <div id="sidesFinalizationModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content1">
+        <span class="close1" onclick="closeFinalSideModal()">&times;</span>
+
+        <div class="waiter-commentary">
+          <p><strong>Your waiter Meickyanlieghe says: </strong><br>
+            "<span id="waitersSidesComment">Would you like everytrhing on that?</span>"</p>
+        </div>
+        <br>
+
+        <div class="img-wrapper"></div>
+        <br>
+
+        <p>Would you like to add <span id="sideName">this side</span> for <span id="sidePrice">$100.00</span> and
+          continue with your order?</p>
+
+        <div class="centered-btn-wrapper">
+          <button id="confirmEntree" class="button">Yes</button>
+          <button onclick="closeFinalSideModal()" class="button">No</button>
+        </div>
+      </div>
     </div>
 </body>
 
@@ -222,6 +252,7 @@
   /* // Modals */
   var entreeModal = document.getElementById("myEntreeModal");
   var sidesModal = document.getElementById("mySidesModal");
+  var finalSidesModal = document.getElementById("sidesFinalizationModal");
 
   // /* // Open Modal Buttons */
   // var btn = document.getElementById("genZEntreeBtn");
@@ -248,6 +279,17 @@
     entreeModal.style.display = "block";
   }
 
+  function openFinalSideModal(description, side, price, img) {
+    $("#sidesFinalizationModal .img-wrapper").empty()
+    if (!!img) {
+      $("#sidesFinalizationModal .img-wrapper").append($("<img/>").attr("src", img))
+    }
+    document.getElementById("waitersSidesComment").innerHTML = description;
+    document.getElementById("sideName").innerHTML = side;
+    document.getElementById("sidePrice").innerHTML = price;
+    finalSidesModal.style.display = "block";
+  }
+
 
 
 
@@ -260,6 +302,11 @@
   function closeModals() {
     sidesModal.style.display = "none";
     entreeModal.style.display = "none";
+    finalSidesModal.style.display = "none";
+  }
+
+  function closeFinalSideModal() {
+    finalSidesModal.style.display = "none";
   }
 
 
