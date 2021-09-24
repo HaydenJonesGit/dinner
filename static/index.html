@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <!-- styles -->
   <link rel="stylesheet" href="styles/index.css">
   <!-- fonts -->
@@ -100,150 +102,181 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Entree Modal -->
-    <div id="myEntreeModal" class="modal">
+  <!-- Entree Modal -->
+  <div id="myEntreeModal" class="modal">
 
-      <!-- Modal content -->
-      <div class="modal-content1">
-        <span class="close1" onclick="closeModals()">&times;</span>
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close1" onclick="closeModals()">&times;</span>
 
-        <div class="waiter-commentary">
-          <p><strong>Your waiter Meickyanlieghe says: </strong><br>
-            "<span id="waiterComment">Would you like everytrhing on that?</span>"</p>
-        </div>
-        <br>
+      <div class="waiter-commentary">
+        <p><strong>Your waiter Meickyanlieghe says: </strong><br>
+          "<span id="waiterComment">Would you like everytrhing on that?</span>"</p>
+      </div>
+      <br>
 
-        <div class="img-wrapper"></div>
-        <br>
+      <div class="img-wrapper"></div>
+      <br>
 
-        <p>Would you like to add <span id="entreeName">this entree</span> for <span id="entreePrice">$100.00</span> and
-          continue with your order?</p>
+      <p>Would you like to add <span id="entreeName">this entree</span> for <span id="entreePrice">$100.00</span> and
+        continue with your order?</p>
 
-        <div class="centered-btn-wrapper">
-          <button id="confirmEntree" class="button">Yes</button>
-          <button onclick="closeModals()" class="button">No</button>
-        </div>
-
+      <div class="centered-btn-wrapper">
+        <button id="confirmEntree" class="button">Yes</button>
+        <button onclick="closeModals()" class="button">No</button>
       </div>
 
     </div>
 
+  </div>
 
-    <!-- SIdes Modal -->
-    <div id="mySidesModal" class="modal">
 
-      <!-- Modal content -->
-      <div class="modal-content1">
-        <span class="close1" onclick="closeModals()">&times;</span>
+  <!-- SIdes Modal -->
+  <div id="mySidesModal" class="modal">
 
-        <h1>Sides Menu</h1>
-        <br>
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close1" onclick="closeModals()">&times;</span>
 
-        <div class="side-dish top-side">
-          <div class="side-img">
-            <img src="images/jello-egg-sandwich.jpg" alt="">
+      <h1>Sides Menu</h1>
+      <br>
+
+      <div class="side-dish top-side">
+        <div class="side-img">
+          <img src="images/jello-egg-sandwich.jpg" alt="">
+        </div>
+        <div class="side-information">
+          <div class="side-name">
+            Egg Salad Surpise
           </div>
-          <div class="side-information">
-            <div class="side-name">
-              Egg Salad Surpise
-            </div>
 
-            <div class="side-description">
-              A questionable bioled eggs and peas combination in jello.
-            </div>
-
-            <div class="side-price">
-              $100.00
-            </div>
-
-            <div class="centered-btn-wrapper">
-              <button id="confirm-side"
-               onclick="openFinalSideModal('Eat your vegetables, proteins, and, desert in one bite!', 'Egg Salad Surpise', '$100.00', 'images/jello-egg-sandwich.jpg' )" 
-               class="button">Select</button>
-            </div>
+          <div class="side-description">
+            A questionable bioled eggs and peas combination in jello.
           </div>
-        </div><br>
 
-        <div class="side-dish top-side">
-          <div class="side-img">
-            <img src="images/mystery-meatloaf-jello-salad.jpg" alt="">
+          <div class="side-price">
+            $100.00
           </div>
-          <div class="side-information">
-            <div class="side-name">
-              Mystery Meatloaf Jello Salad
-            </div>
 
-            <div class="side-description">
-              A delectable concoction of leftover meat from the entrees.
-            </div>
-
-            <div class="side-price">
-              $3.49
-            </div>
-
-            <div class="centered-btn-wrapper">
-              <button id="confirm-side"
-               onclick="openFinalSideModal('It goes well with any entre! Mostly because it contains a little of each entree!', 'Mystery Meatloaf Jello Salad', '$3.49', 'images/mystery-meatloaf-jello-salad.jpg' )" 
-               class="button">Select</button>
-            </div>
-          </div>
-        </div><br>
-
-
-        <div class="side-dish">
-          <div class="side-img">
-            <img src="images/shrimp-jello-salad.jpg" alt="">
-          </div>
-          <div class="side-information">
-            <div class="side-name">
-              Shrimp Jello
-            </div>
-
-            <div class="side-description">
-              Same fancy feel as shrimp cocktail, but in a much more manageable jello container.
-            </div>
-            <!-- smother it in cocktail sauce for just $60 more  -->
-            <div class="side-price">
-              $2.00
-            </div>
-
-            <div class="centered-btn-wrapper">
-              <button id="confirm-side"
-               onclick="openFinalSideModal('Comes with a vat of cocktail sauce!', 'Shrimp Jello', '$2.00', 'images/shrimp-jello-salad.jpg' )" 
-               class="button">Select</button>
-            </div>
+          <div class="centered-btn-wrapper">
+            <button id="confirm-side"
+              onclick="openFinalSideModal('Eat your vegetables, proteins, and, desert in one bite!', 'Egg Salad Surpise', '$100.00', 'images/jello-egg-sandwich.jpg' )"
+              class="button">Select</button>
           </div>
         </div>
-        <br>
-      </div>
-    </div>
+      </div><br>
 
-    <!-- Final Side Modal -->
-    <div id="sidesFinalizationModal" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content1">
-        <span class="close1" onclick="closeFinalSideModal()">&times;</span>
-
-        <div class="waiter-commentary">
-          <p><strong>Your waiter Meickyanlieghe says: </strong><br>
-            "<span id="waitersSidesComment">Would you like everytrhing on that?</span>"</p>
+      <div class="side-dish top-side">
+        <div class="side-img">
+          <img src="images/mystery-meatloaf-jello-salad.jpg" alt="">
         </div>
-        <br>
+        <div class="side-information">
+          <div class="side-name">
+            Mystery Meatloaf Jello Salad
+          </div>
 
-        <div class="img-wrapper"></div>
-        <br>
+          <div class="side-description">
+            A delectable concoction of leftover meat from the entrees.
+          </div>
 
-        <p>Would you like to add <span id="sideName">this side</span> for <span id="sidePrice">$100.00</span> and
-          continue with your order?</p>
+          <div class="side-price">
+            $3.49
+          </div>
 
-        <div class="centered-btn-wrapper">
-          <button id="confirmEntree" class="button">Yes</button>
-          <button onclick="closeFinalSideModal()" class="button">No</button>
+          <div class="centered-btn-wrapper">
+            <button id="confirm-side"
+              onclick="openFinalSideModal('It goes well with any entre! Mostly because it contains a little of each entree!', 'Mystery Meatloaf Jello Salad', '$3.49', 'images/mystery-meatloaf-jello-salad.jpg' )"
+              class="button">Select</button>
+          </div>
+        </div>
+      </div><br>
+
+
+      <div class="side-dish">
+        <div class="side-img">
+          <img src="images/shrimp-jello-salad.jpg" alt="">
+        </div>
+        <div class="side-information">
+          <div class="side-name">
+            Shrimp Jello
+          </div>
+
+          <div class="side-description">
+            Same fancy feel as shrimp cocktail, but in a much more manageable jello container.
+          </div>
+          <!-- smother it in cocktail sauce for just $60 more  -->
+          <div class="side-price">
+            $2.00
+          </div>
+
+          <div class="centered-btn-wrapper">
+            <button id="confirm-side"
+              onclick="openFinalSideModal('Comes with a vat of cocktail sauce!', 'Shrimp Jello', '$2.00', 'images/shrimp-jello-salad.jpg' )"
+              class="button">Select</button>
+          </div>
         </div>
       </div>
+      <br>
     </div>
+  </div>
+
+  <!-- Final Side Modal -->
+  <div id="sidesFinalizationModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close1" onclick="closeFinalSideModal()">&times;</span>
+
+      <div class="waiter-commentary">
+        <p><strong>Your waiter Meickyanlieghe says: </strong><br>
+          "<span id="waitersSidesComment">Would you like everytrhing on that?</span>"</p>
+      </div>
+      <br>
+
+      <div class="img-wrapper"></div>
+      <br>
+
+      <p>Would you like to add <span id="sideName">this side</span> for <span id="sidePrice">$100.00</span> and
+        continue with your order?</p>
+
+      <div class="centered-btn-wrapper">
+        <button id="confirmSide" onclick="finalizeOrder()" class="button">Yes</button>
+        <button onclick="closeFinalSideModal()" class="button">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- receipt Modal -->
+  <div id="receiptModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close1" onclick="closeFinalSideModal()">&times;</span>
+
+      <div class="food-item">
+        <p class="food-name" id="receiptEntreeName"></p>
+        <p class="food-price" id="receiptEntreePrice"></p>
+      </div>
+
+      <div class="food-item">
+        <p class="food-name" id="receiptEntreeName"></p>
+        <p class="food-price" id="receiptEntreePrice"></p>
+      </div>
+
+      <div class="food-item">
+        <p class="food-name" id="receiptEntreeName"></p>
+        <p class="food-price" id="receiptEntreePrice"></p>
+      </div>
+
+      <div class="totalprice">
+        
+      </div>
+
+
+    </div>
+  </div>
 </body>
 
 </html>
@@ -255,17 +288,8 @@
   var finalSidesModal = document.getElementById("sidesFinalizationModal");
 
   // /* // Open Modal Buttons */
-  // var btn = document.getElementById("genZEntreeBtn");
   var sidesBtn = document.getElementById("confirmEntree");
 
-
-
-
-  // /* Open Modals */
-  // btn.onclick = function () {
-  //   // document.getElementById("waiterComment").innerHTML = "Hello World";
-  //   entreeModal.style.display = "block";
-  // }
 
 
   function openEntreeModal(description, entree, price, img) {
@@ -290,6 +314,13 @@
     finalSidesModal.style.display = "block";
   }
 
+  function finalizeOrder() {
+    var finalEntreeName = document.getElementById("entreeName").innerHTML;
+    var finalEntreePrice = document.getElementById("entreePrice").innerHTML;
+    var finalSidePrice = document.getElementById("sidePrice").innerHTML;
+    var finalSideName = document.getElementById("sideName").innerHTML;
+    debugger
+  }
 
 
 
