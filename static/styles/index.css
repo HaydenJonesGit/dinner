@@ -192,6 +192,28 @@
   border-bottom: solid 1px #db0007;
 }
 
+/* receipt modal */
+
+.receipt-items {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: #db0007 solid 5px;
+}
+
+.food-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px 0px;
+}
+
+.total-price {
+  padding: 15px 0;
+}
+
 /* The Close Button */
 .close1 {
   display: flex;

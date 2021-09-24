@@ -253,25 +253,29 @@
 
     <!-- Modal content -->
     <div class="modal-content1">
-      <span class="close1" onclick="closeFinalSideModal()">&times;</span>
+      <span class="close1" onclick="closeModals()">&times;</span>
 
-      <div class="food-item">
-        <p class="food-name" id="receiptEntreeName"></p>
-        <p class="food-price" id="receiptEntreePrice"></p>
+      <h1>Total</h1>
+
+      <div class="receipt-items">
+        <div class="food-item">
+          <p class="food-name" id="receiptEntreeName">none</p>
+          <p class="food-price" id="receiptEntreePrice">$0.00</p>
+        </div>
+
+        <div class="food-item">
+          <p class="food-name" id="receiptSideName">none</p>
+          <p class="food-price" id="receiptSidePrice">$0.00</p>
+        </div>
+
+        <div class="food-item">
+          <p class="food-name">Tax</p>
+          <p class="food-price">+ $10.00</p>
+        </div>
       </div>
 
-      <div class="food-item">
-        <p class="food-name" id="receiptEntreeName"></p>
-        <p class="food-price" id="receiptEntreePrice"></p>
-      </div>
-
-      <div class="food-item">
-        <p class="food-name" id="receiptEntreeName"></p>
-        <p class="food-price" id="receiptEntreePrice"></p>
-      </div>
-
-      <div class="totalprice">
-        
+      <div class="total-price">
+        <p id="totalPrice">Total = $0.00</p>
       </div>
 
 
@@ -286,6 +290,7 @@
   var entreeModal = document.getElementById("myEntreeModal");
   var sidesModal = document.getElementById("mySidesModal");
   var finalSidesModal = document.getElementById("sidesFinalizationModal");
+  var receiptModal = document.getElementById("receiptModal");
 
   // /* // Open Modal Buttons */
   var sidesBtn = document.getElementById("confirmEntree");
@@ -315,11 +320,16 @@
   }
 
   function finalizeOrder() {
-    var finalEntreeName = document.getElementById("entreeName").innerHTML;
-    var finalEntreePrice = document.getElementById("entreePrice").innerHTML;
-    var finalSidePrice = document.getElementById("sidePrice").innerHTML;
-    var finalSideName = document.getElementById("sideName").innerHTML;
-    debugger
+    closeModals();
+    receiptModal.style.display = "block";
+    var receiptEntreePrice = document.getElementById("entreePrice").innerHTML;
+    var receiptSidePrice = document.getElementById("sidePrice").innerHTML;
+
+    document.getElementById("receiptEntreeName").innerHTML = document.getElementById("entreeName").innerHTML;
+    document.getElementById("receiptEntreePrice").innerHTML = receiptEntreePrice
+    document.getElementById("receiptSideName").innerHTML = document.getElementById("sideName").innerHTML;
+    document.getElementById("receiptSidePrice").innerHTML = "+ " + receiptSidePrice
+    document.getElementById("totalPrice").innerHTML = "Total = " + String(parseFloat(receiptEntreePrice.slice(1)) + parseFloat(receiptSidePrice.slice(1)) + 10);
   }
 
 
@@ -334,6 +344,7 @@
     sidesModal.style.display = "none";
     entreeModal.style.display = "none";
     finalSidesModal.style.display = "none";
+    receiptModal.style.display = "none";
   }
 
   function closeFinalSideModal() {
